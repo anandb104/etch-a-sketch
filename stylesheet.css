@@ -7,8 +7,6 @@
 }
 div{
 background-color:lightgray;
-height:60px;
-width: 60px;
 flex:auto;
 outline: 2px solid red;
 }
