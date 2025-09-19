@@ -7,12 +7,21 @@
 }
 div{
 background-color:lightgray;
-flex:auto;
+flex-grow:1;
+flex-shrink:0;
+flex-basis: auto;
 outline: 2px solid red;
 }
-div:hover{
+.black-color:hover{
     background-color:black;
 }
-.new{
+.black-color{
     background-color:black;
 }
+.rgb-color:hover{
+    background-color:rgb(100, 0, 127);
+}
+.rgb-color{
+    background-color:rgb(100, 0, 127);
+}
+  
