@@ -10,9 +10,10 @@ container.appendChild(div[i]);
 const btn1=document.querySelector("#row-setter");
 const btn2=document.querySelector("#rgb-setter");
 const btn3=document.querySelector("#black-setter");
-const btn4=document.querySelectorAll(".rgb-color");
-const btn5=document.querySelectorAll(".rgb-color:hover");
+// const btn4=document.querySelectorAll(".rgb-color");
 const btn6=document.querySelector("#random-setter");
+// const colorPicker=document.getElementById("myColorPicker");
+
 for(let i=0;i<256;i++){
 div[i].onmouseover = () => div[i].classList.add("black-color");
 }
@@ -79,13 +80,18 @@ let mode = null;
 let j=1;
 let k=1;
 let p=1;
+let chosenColor = "#64007f"; // default purple
+const colorPicker = document.getElementById("myColorPicker");
+colorPicker.addEventListener("change", function () {
+  chosenColor = colorPicker.value; // update variable when user picks a new color
+});
 container.addEventListener("mouseover", (e) => {
 
   if (e.target.tagName === "DIV") {
     if (mode === "rgb") {
       
         e.target.classList.remove("black-color");
-      e.target.classList.add("rgb-color");
+        e.target.style.backgroundColor = chosenColor;
       e.target.style.opacity=`${k/10}`; 
       k++;
       if(k==11)k=1;
@@ -116,3 +122,15 @@ btn2.addEventListener("click", () => mode = "rgb");
 btn3.addEventListener("click", () => mode = "black");
 btn6.addEventListener("click", () => mode = "random");
 
+
+
+// colorPicker.addEventListener("change", function () {
+//   var chosenColor = this.value;
+
+//   // select ALL rgb-color squares at the moment of change
+//   const rgbSquares = document.querySelectorAll(".rgb-color");
+
+//   rgbSquares.forEach(square => {
+//     square.style.backgroundColor = chosenColor;
+//   });
+// });
