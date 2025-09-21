@@ -13,6 +13,8 @@ const btn3=document.querySelector("#black-setter");
 // const btn4=document.querySelectorAll(".rgb-color");
 const btn6=document.querySelector("#random-setter");
 const btn8=document.querySelector("#eraser");
+const divl=document.querySelector("#currentcolorshow");
+
 // const colorPicker=document.getElementById("myColorPicker");
 // let l=1;
 // function alertFunction(i){
@@ -28,6 +30,7 @@ let l=1;
 for(let i=0;i<256;i++){
   div[i].addEventListener("mouseover",()=>{
     div[i].classList.add("black-color");
+  divl.style.backgroundColor ='black';
 div[i].style.opacity=`${l/10}`;
 l++;
 if(l==11)l=1;
@@ -112,11 +115,13 @@ container.addEventListener("mouseover", (e) => {
       
         e.target.classList.remove("black-color");
         e.target.style.backgroundColor = chosenColor;
+        divl.style.backgroundColor = chosenColor;
       e.target.style.opacity=`${k/10}`; 
       k++;
       if(k==11)k=1;
     } else if (mode === "black") {
       e.target.style.backgroundColor = 'black';
+      divl.style.backgroundColor ='black';
       e.target.style.opacity=`${p/10}`; 
       p++;
       if(p==11)p=1; 
@@ -126,6 +131,7 @@ container.addEventListener("mouseover", (e) => {
         let y=Math.random();
         let z=Math.random();
             e.target.style.backgroundColor=`rgb(${x*100},${y*100},${z*100})`;
+            divl.style.backgroundColor = `rgb(${x*100},${y*100},${z*100})`;
             e.target.classList.remove("black-color");
             e.target.classList.remove("rgb-color");
             e.target.style.opacity=`${j/10}`; 

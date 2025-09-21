@@ -96,3 +96,19 @@ button{
 #eraserimg{
     width:48px;
 }
+#currentcolorshow{
+    width:48px;
+    height:48px;
+}
+#currentcolor{
+    width:120px;
+    height:68px;
+    background-color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+#currentcolortext{
+    background-color: white; 
+}
