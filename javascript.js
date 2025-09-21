@@ -5,7 +5,6 @@ div[i]=document.createElement("div");
 div[i].style.width="60px";
 div[i].style.height="60px";
 container.appendChild(div[i]);
-
 }
 const btn1=document.querySelector("#row-setter");
 const btn2=document.querySelector("#rgb-setter");
@@ -13,10 +12,25 @@ const btn3=document.querySelector("#black-setter");
 // const btn4=document.querySelectorAll(".rgb-color");
 const btn6=document.querySelector("#random-setter");
 // const colorPicker=document.getElementById("myColorPicker");
-
+// let l=1;
+// function alertFunction(i){
+// div[i].classList.add("black-color");
+// div[i].style.opacity=`${l/10}`;
+// l++;
+// if(l==11)l=1;
+// }
+// for(let i=0;i<256;i++){
+//   div[i].onmouseover=()=>alertFunction(i);
+//   }
+let l=1;
 for(let i=0;i<256;i++){
-div[i].onmouseover = () => div[i].classList.add("black-color");
-}
+  div[i].addEventListener("mouseover",()=>{
+    div[i].classList.add("black-color");
+div[i].style.opacity=`${l/10}`;
+l++;
+if(l==11)l=1;
+  });
+  }
 
 
 btn1.addEventListener("click",()=>{
@@ -80,7 +94,7 @@ let mode = null;
 let j=1;
 let k=1;
 let p=1;
-let chosenColor = "#64007f"; // default purple
+let chosenColor = "#64007f"; 
 const colorPicker = document.getElementById("myColorPicker");
 colorPicker.addEventListener("change", function () {
   chosenColor = colorPicker.value; // update variable when user picks a new color
@@ -96,9 +110,7 @@ container.addEventListener("mouseover", (e) => {
       k++;
       if(k==11)k=1;
     } else if (mode === "black") {
-
-        e.target.classList.remove("rgb-color");
-      e.target.classList.add("black-color");
+      e.target.style.backgroundColor = 'black';
       e.target.style.opacity=`${p/10}`; 
       p++;
       if(p==11)p=1; 
@@ -122,7 +134,18 @@ btn2.addEventListener("click", () => mode = "rgb");
 btn3.addEventListener("click", () => mode = "black");
 btn6.addEventListener("click", () => mode = "random");
 
-
+const btn7=document.querySelector("#clear-setter");
+btn7.addEventListener("click",()=>{
+  let divid=[];
+  divid=container.querySelectorAll("div");
+  const length=divid.length;
+  for(i=0;i<length;i++){
+    div[i].style.backgroundColor="";
+    div[i].classList.remove('black-color');
+    div[i].classList.remove('rgb-color');
+    div[i].style.opacity=`1`;
+  }
+})
 
 // colorPicker.addEventListener("change", function () {
 //   var chosenColor = this.value;
