@@ -8,16 +8,43 @@
     <script src="./javascript.js" defer></script>
 </head>
 <body>
-    <button id="row-setter">Press me for changing the number of rows</button>
+    <div id="header">
+    <p>Etch A Sketch</p>
+    <img id='odinlogo'src="./images/odinlogo.png" alt="Logo of odin project">
+    </div>
+    <div id="content">
+    <div id="settings">
+        <div id="rowin">
+        <label for="rowno">Enter the number of rows:</label>
+        <input type="text" id="rowno" name="rowno">
+        <button id="submit">Submit</button>
+        </div>
+        <div id="colorin">
     <button id="rgb-setter"> <label for="myColorPicker">Choose a color:</label>
         <input type="color" id="myColorPicker" name="userColor" value="#000000"></button>
-   
-    <button id="black-setter">Press for drawing in black</button>
-     <button id="random-setter">Press for drawing in random</button>
+        </div>
+        <div id="blackin">
+    <button id="black-setter"><img id='blackcolor'src="./images/black.png" alt="Black Color"></button>
+        </div>
+        <div id="randomin">
+     <button id="random-setter"><img id='randomcolor'src="./images/randomcolor.jpg" alt="Mix of Random Colors"></button>
+    </div>
+    <div id="currentcolor">
+        
+    </div>
+    <div id="clearin">
      <button id="clear-setter">Press for clearing the grid</button>
-     <button id="eraser">Press for erasing</button>
+    </div>
+    <div id="eraserin">
+     <button id="eraser"><img id='eraserimg'src="./images/eraser.jpg" alt="Eraser"></button>
+    </div>
+    </div>
     <div id="container">
     </div>
-
+</div>
+   <div id="footer">
+    © Made by Anand
+   2025
+   </div>
 </body>
 </html>

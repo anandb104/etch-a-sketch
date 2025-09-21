@@ -6,11 +6,11 @@
     background-color:black;
 }
 div{
-background-color:lightgray;
-flex-grow:1;
+background-color:white;
+flex-grow:0;
 flex-shrink:0;
 flex-basis: auto;
-outline: 2px solid red;
+outline: 2px solid red; 
 }
 .black-color:hover{
     background-color:black;
@@ -24,4 +24,75 @@ outline: 2px solid red;
 .rgb-color{
     background-color:rgb(100, 0, 127);
 }
-  
+body{
+    display:flex;
+    flex-direction:column;
+    background-color: white;
+}
+#settings{
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+    align-items: center;
+    justify-content: center;
+    outline:lightgray
+}
+#rowin{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#settings div{
+outline:lightgray;
+}
+#content{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   width:auto
+}
+#header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    outline:white;
+
+}
+p{
+    font-size:48px;
+    font-weight: bold;
+}
+#odinlogo{
+    width:120px;
+    height:auto;
+   
+}
+button{
+    padding:20px;
+    width:120px;
+}
+#rowno{
+    width:64px;
+}
+#rowin button{
+    width:90px;
+}
+#footer{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color:white;
+    font-size: 32px;
+    font-weight: bold;
+}
+#blackcolor{
+    width:48px;
+}
+#randomcolor{
+    width:48px;
+}
+#eraserimg{
+    width:48px;
+}

@@ -6,7 +6,8 @@ div[i].style.width="60px";
 div[i].style.height="60px";
 container.appendChild(div[i]);
 }
-const btn1=document.querySelector("#row-setter");
+const input=document.querySelector("#rowno");
+const btn1=document.querySelector("#submit");
 const btn2=document.querySelector("#rgb-setter");
 const btn3=document.querySelector("#black-setter");
 // const btn4=document.querySelectorAll(".rgb-color");
@@ -35,7 +36,11 @@ if(l==11)l=1;
 
 
 btn1.addEventListener("click",()=>{
-    let input=prompt("Enter the number of rows",64)
+    const altinput=input.value;
+    if(altinput>100){
+      alert("Please enter a number between 1 to 100")
+      return;
+    }
     // for(i=0;i<256;i++){
     //     container.removeChild(div[i]);
     //     }
@@ -45,10 +50,10 @@ btn1.addEventListener("click",()=>{
     for(i=0;i<length;i++){
     container.removeChild(div[i]);
     }
-    for(let i=0;i<((Number(input))*(Number(input)));i++){
+    for(let i=0;i<((Number(altinput))*(Number(altinput)));i++){
         div[i]=document.createElement("div");
-        div[i].style.width=`${960/Number(input)}px`;
-        div[i].style.height=`${960/Number(input)}px`;
+        div[i].style.width=`${960/Number(altinput)}px`;
+        div[i].style.height=`${960/Number(altinput)}px`;
         container.appendChild(div[i]);
     }
     for(let i=0;i<length;i++){
@@ -128,7 +133,7 @@ container.addEventListener("mouseover", (e) => {
             if(j==11)j=1;
         }
         else if (mode === "eraser") {
-          e.target.style.backgroundColor ="lightgray";
+          e.target.style.backgroundColor ="white";
           e.target.style.opacity=`1`; 
         }
 }
