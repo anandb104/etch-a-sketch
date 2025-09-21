@@ -59,7 +59,7 @@ btn1.addEventListener("click",()=>{
         div[i].style.height=`${960/Number(altinput)}px`;
         container.appendChild(div[i]);
     }
-    for(let i=0;i<length;i++){
+    for(let i=0;i<((Number(altinput))*(Number(altinput)));i++){
             div[i].onmouseover=(()=>{div[i].classList.add("black-color");})
         }
     });
