@@ -11,6 +11,7 @@ const btn2=document.querySelector("#rgb-setter");
 const btn3=document.querySelector("#black-setter");
 // const btn4=document.querySelectorAll(".rgb-color");
 const btn6=document.querySelector("#random-setter");
+const btn8=document.querySelector("#eraser");
 // const colorPicker=document.getElementById("myColorPicker");
 // let l=1;
 // function alertFunction(i){
@@ -126,6 +127,10 @@ container.addEventListener("mouseover", (e) => {
             j++;
             if(j==11)j=1;
         }
+        else if (mode === "eraser") {
+          e.target.style.backgroundColor ="lightgray";
+          e.target.style.opacity=`1`; 
+        }
 }
 });
 
@@ -133,7 +138,7 @@ container.addEventListener("mouseover", (e) => {
 btn2.addEventListener("click", () => mode = "rgb");
 btn3.addEventListener("click", () => mode = "black");
 btn6.addEventListener("click", () => mode = "random");
-
+btn8.addEventListener("click", () => mode = "eraser");
 const btn7=document.querySelector("#clear-setter");
 btn7.addEventListener("click",()=>{
   let divid=[];
@@ -157,3 +162,4 @@ btn7.addEventListener("click",()=>{
 //     square.style.backgroundColor = chosenColor;
 //   });
 // });
+
