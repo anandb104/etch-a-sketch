@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     height:960px;
     width:960px;
-    background-color:black;
+    /* background-color:black; */
 }
 div{
 background-color:white;
@@ -11,6 +11,7 @@ flex-grow:0;
 flex-shrink:0;
 flex-basis: auto;
 outline: 2px solid red; 
+box-sizing: border-box;
 }
 .black-color:hover{
     background-color:black;

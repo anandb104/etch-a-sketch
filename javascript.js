@@ -49,7 +49,7 @@ btn1.addEventListener("click",()=>{
     //     }
     let divi=[];
     divi=container.querySelectorAll("div");
-    const length=divi.length;
+    const length=div.length;
     for(i=0;i<length;i++){
     container.removeChild(div[i]);
     }
@@ -130,7 +130,7 @@ container.addEventListener("mouseover", (e) => {
         let x=Math.random();
         let y=Math.random();
         let z=Math.random();
-            e.target.style.backgroundColor=`rgb(${x*100},${y*100},${z*100})`;
+            e.target.style.backgroundColor=`rgb(${Math.floor(x*255)},${Math.floor(y*255)},${Math.floor(z*255)})`;
             divl.style.backgroundColor = `rgb(${x*100},${y*100},${z*100})`;
             e.target.classList.remove("black-color");
             e.target.classList.remove("rgb-color");
